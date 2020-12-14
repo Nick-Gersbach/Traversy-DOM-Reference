@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Multi Element Selectors</title>
+</head>
+
+<body>
+    <ul>
+        <li class="list-item">List Item 1</li>
+        <li class="list-item">List Item 2</li>
+        <li class="list-item">List Item 3</li>
+        <li class="list-item">List Item 4</li>
+        <li class="list-item">List Item 5</li>
+
+    </ul>
+
+    <!--Notes 
+
+    Using multi selectors makes a data set (HTML Collection) similar to an array however we can't manipulate it as much as we could with a traditional array. However, there are ways that allow us to easily turn the data into an array...
+
+     -->
+    <script>
+        //Get Elements By Class Name
+        let items = document.getElementsByClassName('list-item');
+        console.log(items);
+
+        //access a specific list item
+        console.log(items[0])
+
+        //Manipulating our specific list item
+        items[0].style.color = 'red';
+        items[3].textContent = 'Hello';
+
+        //You can also use getElementsByTagName and it works pretty much the same exact way
+
+        //document.querySelectorAll - Allows you to select items the same way but gives you the ability to do more array methods.
+
+
+    </script>
+</body>
+
+</html>

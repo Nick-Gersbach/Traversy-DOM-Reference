@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 8:00 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Selectors</title>
+</head>
+
+<body id="document">
+
+    <h1 id="main-heading">I Love JS</h1>
+
+    <button type="button" id="btn">
+        Console Message
+    </button>
+
+    <p id="paragraph"></p>
+
+    <p id="custom-p"></p>
+
+    <button type="button" id="second-btn">Second Button</button>
+
+    <button type="button" id="changer">Color Changer</button>
+
+    <h2 class="the-h2">Query Selectors are Cool</h2>
+
+    <p id="greeting">Hello There!</p>
+
+    <h4>This is my h4 element...</h4>
+
+    <!-- Notes 
+    
+    - There are sinlge element selectors and multiple element selectors
+
+    SINGLE ELEMENT SELECTORS
+
+    1. document.getElementById - gets an element that has the corresponding ID
+
+    Example - document.getElementById("id").onclick = function () {
+        console.log("You clicked the button!")
+    }
+
+    - You can also get other attributes of a tag with a specific id such as any class names that may be attached to it
+
+    console.log(document.getElementById('id').className);
+
+    You can also change styling
+     document.getElementById("btn").style.background = 'purple';
+
+     - You'll only use JS styling to add dynamic functionailty, not to style the actual page
+
+     USING QUERY SELECTOR (ES6)
+     
+    _ Query Selector is much more powerful because it allows you to select anything instead of just selecting by ID. It borrowed this capability from JQuery and is one of the reasons why Jquery is outdated...
+    
+    -->
+    <script>
+        //Selecting an element by it's ID 
+        document.getElementById("btn").onclick = function () {
+            console.log("You clicked the button!")
+        }
+
+        //Styling our ID selector with JS
+        document.getElementById("btn").style.background = 'purple';
+
+        document.getElementById("btn").style.color = 'white';
+
+        document.getElementById("btn").style.padding = '20px';
+
+        //Change the content with JS
+        document.getElementById("btn").textContent = "The Button";
+
+        //Inserting HTML (innerHTML)
+        document.getElementById("paragraph").innerHTML = "Fill up the paragraph!";
+
+        //Inserting HTML (innerHTML) changing content
+        document.getElementById("custom-p").innerHTML = "<span style='color:red'>Hello</span>";
+
+        //The above examples show what you can do, but we can select things once and manipulate it later by putting the values into a variable.
+
+        //USING VARIABLES TO SELECT ELEMENTS FASTER 
+
+        // Main Heading
+        const mainHeading = document.getElementById('main-heading');
+
+        mainHeading.style.fontFamily = 'sans-serif';
+
+        mainHeading.style.textAlign = 'center';
+
+        mainHeading.style.textDecoration = 'underline';
+
+        mainHeading.style.background = 'black';
+
+        mainHeading.style.color = 'yellow';
+
+        mainHeading.style.margin = 'auto';
+
+        mainHeading.style.padding = '30px';
+
+        mainHeading.style.width = '300px';
+
+        mainHeading.style.borderRadius = '10px';
+
+        mainHeading.style.cursor = 'pointer';
+
+        mainHeading.onclick = function () {
+            alert('JS loves you too!')
+        }
+
+        //Button
+        const btn = document.getElementById('btn');
+
+        btn.style.display = 'block';
+
+        //Second Button
+
+        const secondBtn = document.getElementById('second-btn');
+
+        secondBtn.style.padding = '30px'
+        secondBtn.style.background = 'orange'
+        secondBtn.style.border = 'none'
+        secondBtn.style.borderRadius = '10px'
+        secondBtn.style.fontWeight = 'bold';
+        secondBtn.style.fontSize = '21px';
+        secondBtn.style.cursor = 'pointer';
+        secondBtn.style.outline = 'none';
+        secondBtn.onclick = function () {
+            console.log('You clicked the 2nd button!')
+        }
+
+
+        //Style the body of the document
+        const body = document.getElementById('document');
+
+        body.style.background = 'green';
+
+        //Color Changer Button
+        const changer = document.getElementById('changer');
+
+        changer.onclick = function () {
+            document.getElementById('document').style.background = 'aqua';
+        }
+
+        //USING QUERY SELECTOR
+
+        //selecting by class
+        const headingTwo = document.querySelector('.the-h2');
+
+        headingTwo.style.fontFamily = 'sans-serif';
+
+        //Selecting by ID
+        const greeting = document.querySelector('#greeting');
+
+        greeting.style.color = 'white';
+
+        //Selecting by element - If there was more than one h4 on the page, the first one would be selected by default.
+        const smallHeading = document.querySelector('h4');
+
+        smallHeading.style.color = 'white';
+
+
+
+
+    </script>
+</body>
+
+</html>

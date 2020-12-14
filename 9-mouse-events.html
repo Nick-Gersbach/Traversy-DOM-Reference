@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Mouse Events</title>
+</head>
+
+<body>
+    <h1>JS Mouse Events</h1>
+    <p class="p-one">This is parapgraph number 1!</p>
+    <p class="p-two">This is paragraph number 2!</p>
+    <script>
+        const paraOne = document.querySelector('.p-one');
+        const paraTwo = document.querySelector('.p-two');
+
+        paraOne.addEventListener('mouseenter', mouseOver);
+
+        function mouseOver(e) {
+            console.log('You moused over the first paragraph!');
+        }
+    </script>
+</body>
+
+</html>

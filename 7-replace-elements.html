@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Element With JS</title>
+</head>
+
+<body>
+    <div class="parent">
+        <h1 id="task-title">This is my original Heading</h1>
+    </div>
+
+    <ul class="collection">
+        <li class="collection-item">List Item</li>
+        <li class="collection-item">List Item</li>
+        <li class="collection-item">List Item</li>
+        <li class="collection-item">List Item</li>
+        <li class="collection-item">List Item</li>
+    </ul>
+
+    <script>
+
+        //REPLACE ONE ELEMENT WITH ANOTHER ELEMENT
+
+        //Create Element
+        const newHeading = document.createElement('h1');
+
+        //Add an ID
+        newHeading.id = 'main-heading';
+
+        //Create a new text Node
+        newHeading.appendChild(document.createTextNode('This is my new Heading'));
+
+        //Get Old Heading
+        const oldHeading = document.getElementById('task-title');
+
+        //Parent
+        const parent = document.querySelector('.parent');
+
+        //Replace
+        parent.replaceChild(newHeading, oldHeading);
+
+        console.log(newHeading);
+
+        //REMOVE AN ELEMENT WITH JS
+
+        const listItems = document.querySelectorAll('li');
+        const list = document.querySelector('ul');
+
+        //Remove the first li
+        listItems[0].remove();
+
+        //Remove the 2nd li
+        listItems[1].remove();
+
+        //Remove the 3rd li
+        listItems[2].remove();
+
+
+        //You can do the same thing with the removeChild method
+        list.removeChild(listItems[4]);
+
+
+
+    </script>
+</body>
+
+</html>

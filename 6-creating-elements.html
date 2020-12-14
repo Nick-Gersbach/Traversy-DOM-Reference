@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Elements with JS</title>
+</head>
+
+<body>
+    <ul class="collection">
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+
+
+    <script>
+        //Create Element
+        const li = document.createElement('li');
+
+        //Add Class to created element
+        li.className = 'collection-item'
+
+        //Add Content to the li (create a text node and append)
+        li.appendChild(document.createTextNode('Hello Nick'));
+
+        //Make li appear on the screen instead of just in the console
+        document.querySelector('ul.collection').appendChild(li);
+
+        //Create new link Element
+        const link = document.createElement('a');
+
+        //Add an Attribute
+        li.setAttribute('title', 'New Item');
+
+
+        console.log(li);
+    </script>
+</body>
+
+</html>

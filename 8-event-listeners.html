@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Listeners</title>
+</head>
+
+<body>
+    <h1>JS Event Listeners</h1>
+
+    <h2>Task List</h2>
+
+    <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+    <button type="button" class="clear-tasks">Clear Tasks</button>
+    <button type="button" class="btn">Click Me</button>
+    <script>
+
+        //Add an onclick event with an anonymous inner function. This is the more messy way that stef taught you.
+        document.querySelector('.clear-tasks').addEventListener('click', function () {
+            console.log('You cleared the tasks');
+        });
+
+        //Adding an onclick event with an event parameter and a named function. This is the better more professional way to do it. You add the function name after the click. The e in the function is the placeholder for the onClick function name
+        document.querySelector('.btn').addEventListener('click', onClick);
+
+        function onClick(e) {
+            // console.log('You clicked the button!');
+
+            let val;
+
+            val = e;
+
+            val = e.target;
+            val = e.target.ClassName;
+
+            e.target.innerText = 'Hello';
+
+            val = e.type;
+
+            console.log(val);
+        }
+    </script>
+</body>
+
+</html>
